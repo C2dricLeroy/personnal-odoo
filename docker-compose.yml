@@ -1,0 +1,57 @@
+services:
+
+  db:
+    container_name: odoo-postgres
+    image: postgres:15-alpine
+    networks:
+      - web
+    ports:
+      - 5439:5432
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: always
+
+  odoo:
+    container_name: odoo
+    image: odoo:19.0
+    networks:
+      - web
+    environment:
+      HOST: postgres
+      USER: odoo
+      PASSWORD: secret
+    depends_on:
+      - db
+    volumes:
+      - ./extra-addons:/mnt/extra-addons:rw
+      - ./celer-addons:/mnt/celer-addons:rw
+      - data:/var/lib/odoo
+      - ./config/odoo.conf:/etc/odoo/odoo.conf:rw
+    restart: always
+
+  nginx:
+    image: nginx:alpine
+    depends_on:
+      - odoo
+    ports:
+      - "8080:80"   # local
+      # - "80:80"   # prod
+      # - "443:443" # prod (plus tard)
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - web
+    restart: always
+
+
+volumes:
+  postgres-data:
+  data:
+
+networks:
+  web:
+    driver: bridge
