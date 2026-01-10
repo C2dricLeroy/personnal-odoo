@@ -50,6 +50,7 @@ services:
 volumes:
   postgres-data:
   data:
+  certbot-webroot:
 
 networks:
   web:
