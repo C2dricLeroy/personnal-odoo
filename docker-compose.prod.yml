@@ -44,8 +44,6 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - certbot-webroot:/var/www/certbot
       - certbot-certs:/etc/letsencrypt
-    networks:
-      - web
     restart: always
 
   certbot:
