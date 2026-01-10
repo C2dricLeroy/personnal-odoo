@@ -32,38 +32,11 @@ services:
     command: odoo -c /etc/odoo/odoo.conf --db_host=db --db_user=${POSTGRES_USER} --db_password=${POSTGRES_PASSWORD}
     restart: always
 
-  nginx:
-    image: nginx:alpine
-    depends_on:
-      - odoo
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - certbot-webroot:/var/www/certbot
-      - certbot-certs:/etc/letsencrypt
-    networks:
-      - web
-    restart: always
-
-  certbot:
-    image: certbot/certbot
-    volumes:
-      - certbot-webroot:/var/www/certbot
-      - certbot-certs:/etc/letsencrypt
-
-
 volumes:
   postgres-data:
   data:
-  certbot-webroot:
-  certbot-certs:
 
 networks:
-  web:
-    driver: bridge
-    enable_ipv6: true
-    ipam:
-      config:
-        - subnet: 2001:db8:1::/64
+  proxy-network:
+    external: true
+
