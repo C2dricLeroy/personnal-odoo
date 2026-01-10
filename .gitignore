@@ -1,3 +1,6 @@
 db
 odoo_source
 data
+
+.env
+.env.prod
