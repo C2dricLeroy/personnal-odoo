@@ -4,7 +4,7 @@ services:
     container_name: odoo-postgres
     image: postgres:15-alpine
     networks:
-      - web
+      - proxy-network
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
