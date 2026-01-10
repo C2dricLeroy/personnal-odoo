@@ -5,12 +5,10 @@ services:
     image: postgres:15-alpine
     networks:
       - web
-    ports:
-      - 5439:5432
     environment:
-      POSTGRES_DB: postgres
-      POSTGRES_USER: odoo
-      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - postgres-data:/var/lib/postgresql/data
     restart: always
@@ -22,15 +20,15 @@ services:
       - web
     environment:
       HOST: postgres
-      USER: odoo
-      PASSWORD: secret
+      USER: ${POSTGRES_USER}
+      PASSWORD: ${POSTGRES_PASSWORD}
     depends_on:
       - db
     volumes:
       - ./extra-addons:/mnt/extra-addons:rw
       - ./celer-addons:/mnt/celer-addons:rw
       - data:/var/lib/odoo
-      - ./config/odoo.dev.conf:/etc/odoo/odoo.conf:rw
+      - ./config/odoo.prod.conf:/etc/odoo/odoo.conf:rw
     restart: always
 
   nginx:
@@ -38,9 +36,8 @@ services:
     depends_on:
       - odoo
     ports:
-      - "8080:80"   # local
-      # - "80:80"   # prod
-      # - "443:443" # prod (plus tard)
+      - "80:80"
+      - "443:443"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     networks:
