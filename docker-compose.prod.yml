@@ -19,7 +19,7 @@ services:
     networks:
       - web
     environment:
-      HOST: postgres
+      HOST: db
       USER: ${POSTGRES_USER}
       PASSWORD: ${POSTGRES_PASSWORD}
     depends_on:
