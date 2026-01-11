@@ -1,0 +1,21 @@
+<odoo>
+
+    <template id="homepage" name="Celer Homepage">
+        <t t-call="celer_website.celer_layout">
+            <section class="container mt-5">
+                <h1>Cédric Leroy – Odoo Developer</h1>
+                <p>
+                    This website is still in development, please check back later.
+                </p>
+            </section>
+        </t>
+    </template>
+
+    <record id="page_home" model="website.page">
+        <field name="name">Home</field>
+        <field name="url">/</field>
+        <field name="view_id" ref="celer_website.homepage"/>
+        <field name="is_published">True</field>
+    </record>
+
+</odoo>
