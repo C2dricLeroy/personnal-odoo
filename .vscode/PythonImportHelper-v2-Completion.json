@@ -1,0 +1,45 @@
+[
+    {
+        "label": "http",
+        "importPath": "odoo",
+        "description": "odoo",
+        "isExtraImport": true,
+        "detail": "odoo",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "odoo.http",
+        "description": "odoo.http",
+        "isExtraImport": true,
+        "detail": "odoo.http",
+        "documentation": {}
+    },
+    {
+        "label": "install_fr",
+        "kind": 2,
+        "importPath": "celer-addons.celer_app.post_init_hook",
+        "description": "celer-addons.celer_app.post_init_hook",
+        "peekOfCode": "def install_fr(env):\n    lang = env['res.lang'].with_context(active_test=False).search([('code', '=', \"fr_FR\")], limit=1)\n    if lang and not lang.active:\n        try:\n            wizard = env[\"base.language.install\"].create({\n                'lang_ids': [(4, lang.ids)],\n            })\n            wizard.lang_install()\n        except Exception as e:\n            print(f'Error installing French language: {e}')",
+        "detail": "celer-addons.celer_app.post_init_hook",
+        "documentation": {}
+    },
+    {
+        "label": "post_init_hook",
+        "kind": 2,
+        "importPath": "celer-addons.celer_app.post_init_hook",
+        "description": "celer-addons.celer_app.post_init_hook",
+        "peekOfCode": "def post_init_hook(env):   \n    install_fr(env)",
+        "detail": "celer-addons.celer_app.post_init_hook",
+        "documentation": {}
+    },
+    {
+        "label": "CelerWebsite",
+        "kind": 6,
+        "importPath": "celer-addons.celer_website.controllers.main",
+        "description": "celer-addons.celer_website.controllers.main",
+        "peekOfCode": "class CelerWebsite(http.Controller):\n    @http.route(\"/\", type=\"http\", auth=\"public\", website=True)\n    def home(self):\n        return request.render(\"celer_website.homepage\")",
+        "detail": "celer-addons.celer_website.controllers.main",
+        "documentation": {}
+    }
+]
