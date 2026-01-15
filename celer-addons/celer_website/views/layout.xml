@@ -4,7 +4,7 @@
             <body t-att-class="'celer-body'">
                 <t t-call="website.navbar"/>
                 <main id="wrap">
-                    <t t-raw="0"/>
+                    <t t-out="0"/>
                 </main>
             </body>
         </xpath>

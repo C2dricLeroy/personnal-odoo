@@ -1,8 +1,19 @@
 COMPOSE = docker compose
 ODOO_CONTAINER = odoo
 POSTGRES_CONTAINER = odoo-postgres
-
+INIT_MODULES = base, web
+DB_NAME = admin
 .PHONY: up down restart logs shell build
+
+init:
+	@echo "--- Démarrage de la base de données ---"
+	docker compose up -d db
+	@echo "--- Attente du service PostgreSQL (10s) ---"
+	sleep 10
+	@echo "--- Installation initiale des modules : $(INIT_MODULES) ---"
+	$(COMPOSE_RUN) odoo -c /etc/odoo/odoo.conf -d $(DB_NAME) -i $(MODULES) --stop-after-init
+	@echo "--- Lancement de l'environnement complet ---"
+	docker compose up -d
 
 ## Démarrer les services
 start:

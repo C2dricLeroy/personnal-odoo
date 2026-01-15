@@ -2,11 +2,15 @@
 
     <template id="homepage" name="Celer Homepage">
         <t t-call="celer_website.celer_layout">
-            <section class="container mt-5">
-                <h1>Cédric Leroy – Odoo Developer</h1>
-                <p>
+            <section>
+                <t t-call="celer_website.celer_navbar"/>
+                <h1 class="text-4xl font-light tracking-tight">
+                    Cedric Leroy – Odoo Developer
+                </h1>
+                <p class="text-lg text-gray-600">
                     This website is still in development, please check back later.
                 </p>
+                <t t-call="celer_website.celer_footer"/>
             </section>
         </t>
     </template>

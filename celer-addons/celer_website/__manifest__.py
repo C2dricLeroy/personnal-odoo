@@ -8,12 +8,15 @@
         "website",
     ],
     "data": [
+        "views/components/header.xml",
+        "views/components/footer.xml",
         "views/layout.xml",
-        "views/pages.xml",
+        "views/pages/homepage.xml",
     ],
     "assets": {
         "web.assets_frontend": [
-            "celer_website/static/src/css/main.css",
+            "celer_website/static/src/css/tailwind.css",
+            "celer_website/static/src/css/tailwind.out.css",
         ],
     },
     "installable": True,
