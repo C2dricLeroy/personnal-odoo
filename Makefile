@@ -8,6 +8,12 @@ POSTGRES_CONTAINER = odoo-postgres
 start:
 	$(COMPOSE) up
 
+update:
+	$(COMPOSE) up -d
+	$(COMPOSE) exec $(ODOO_CONTAINER) odoo  -u $(MODULE) -d admin --dev=assets --stop-after-init
+	$(COMPOSE) down
+	$(COMPOSE) up
+
 startd:
 	$(COMPOSE) up -d
 
