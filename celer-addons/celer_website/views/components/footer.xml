@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <template id="celer_footer" name="Celer Dev Footer">
+    <footer class="tw-bg-gray-50 tw-border-t tw-border-gray-100 tw-mt-20">
+      <div class="tw-max-w-7xl tw-mx-auto tw-px-6 tw-py-6">
+
+        <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-4 tw-gap-8">
+          <div>
+            <div class="tw-text-xl tw-font-light tw-tracking-tight tw-mb-4">
+              <span class="tw-font-extralight">celer</span>
+              <span class="tw-font-medium">-dev</span>
+            </div>
+            <p class="tw-text-sm tw-text-gray-600">
+              Crafting elegant digital solutions with precision and sophistication.
+            </p>
+          </div>
+          <div>
+            <h3 class="tw-font-medium tw-mb-4">Navigation</h3>
+            <ul class="tw-space-y-2 tw-text-sm tw-text-gray-600">
+              <li><a href="/" class="tw-hover:text-black tw-transition-colors">Home</a></li>
+              <li><a href="/about" class="tw-hover:text-black tw-transition-colors">About</a></li>
+              <li><a href="/services" class="tw-hover:text-black tw-transition-colors">Services</a></li>
+              <li><a href="/blog" class="tw-hover:text-black tw-transition-colors">Blog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="tw-font-medium tw-mb-4">Services</h3>
+            <ul class="tw-space-y-2 tw-text-sm tw-text-gray-600">
+              <li>Web Development</li>
+              <li>Mobile Apps</li>
+              <li>UI/UX Design</li>
+              <li>Consulting</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="tw-font-medium tw-mb-4">Contact</h3>
+            <ul class="tw-space-y-2 tw-text-sm tw-text-gray-600">
+              <li>info@celer-dev.com</li>
+              <li>+1 (555) 123-4567</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="tw-mt-12 tw-pt-8 tw-border-t tw-border-gray-200 tw-text-sm tw-text-gray-500 tw-text-center">
+          © 2026 celer-dev. All rights reserved.
+        </div>
+
+      </div>
+    </footer>
+  </template>
+</odoo>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="celer_service" name="Service Preview">
+        <section class="tw-bg-gray-50 tw-py-20">
+            <div class="tw-max-w-7xl tw-mx-auto tw-px-6">
+
+                <h2 class="tw-text-4xl tw-font-light tw-mb-12">
+                    What do I <span class="tw-font-medium">Offer</span>
+                </h2>
+
+                <!-- Data -->
+                <t t-set="services" t-value="[
+                    {
+                        'title': 'Odoo Development &amp; Customization',
+                        'description': 'Custom Odoo modules, business workflows, and ERP extensions tailored to your company processes. Clean, scalable, and upgrade-safe code.'
+                    },
+                    {
+                        'title': 'ERP Integration &amp; Automation',
+                        'description': 'Integration of Odoo with external systems (APIs, accounting tools, e-commerce, logistics) and automation of business workflows.'
+                    },
+                    {
+                        'title': 'Odoo Audit &amp; Technical Consulting',
+                        'description': 'Technical audits, performance optimization, refactoring, and long-term support to ensure a stable and scalable Odoo instance.'
+                    }
+                ]"/>
+
+                <div class="tw-grid tw-grid-cols-1 tw-md:grid-cols-3 tw-gap-8">
+                    <t t-foreach="services" t-as="service">
+                        <div class="tw-bg-white tw-p-8 tw-border tw-border-gray-100">
+                            <h3 class="tw-text-xl tw-font-medium tw-mb-3">
+                                <t t-esc="service['title']"/>
+                            </h3>
+                            <p class="tw-text-gray-600 tw-leading-relaxed">
+                                <t t-esc="service['description']"/>
+                            </p>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

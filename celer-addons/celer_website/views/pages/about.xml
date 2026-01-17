@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="about" name="About">
+        <t t-call="celer_website.celer_layout">
+            <t t-call="celer_website.celer_navbar"/>
+            <t t-call="celer_website.celer_development"/>
+            <t t-call="celer_website.celer_footer"/>
+        </t>
+    </template>
+</odoo>

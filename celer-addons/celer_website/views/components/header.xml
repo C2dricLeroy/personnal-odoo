@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <template id="celer_navbar" name="Celer Dev Navbar">
+    <nav class="tw-bg-white tw-border-b tw-border-gray-100">
+      <div class="tw-max-w-7xl tw-mx-auto tw-px-6 tw-py-4">
+        <div class="tw-flex tw-items-center tw-justify-between">
+          <a href="/" class="tw-flex tw-items-center">
+            <div class="tw-text-2xl tw-font-light tw-tracking-tight">
+              <span class="tw-font-extralight tw-text-gray-600">celer</span>
+              <span class="tw-font-medium">-dev</span>
+            </div>
+          </a>
+          <div class="tw-flex tw-gap-8">
+            <t t-set="current_path" t-value="request.httprequest.path"/>
+            <t t-foreach="[
+              {'path': '/', 'label': 'Home'},
+              {'path': '/about', 'label': 'About'},
+              {'path': '/services', 'label': 'Services &amp; Projects'},
+              {'path': '/blog', 'label': 'Blog'},
+              {'path': '/contact', 'label': 'Contact'}
+            ]" t-as="item">
+              <a
+                t-att-href="item['path']"
+                t-att-class="
+                  'tw-transition-colors ' +
+                  ('tw-text-black' if current_path == item['path']
+                  else 'tw-text-gray-500 tw-hover:text-black')
+                "
+              >
+                <t t-esc="item['label']"/>
+              </a>
+
+            </t>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+  </template>
+</odoo>

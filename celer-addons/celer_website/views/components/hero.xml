@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  <template id="celer_hero" name="Celer Hero Section">
+
+    <section class="tw-max-w-7xl tw-mx-auto tw-px-6 tw-py-20 tw-overflow-hidden">
+      <div class="tw-flex tw-items-start tw-gap-16">
+
+        <!-- LEFT -->
+        <div class="tw-flex tw-flex-col tw-flex-1 tw-max-w-xl">
+          <h1 class="tw-text-6xl tw-font-light tw-mb-6 tw-leading-tight">
+            ERP development<br/>
+            <span class="tw-font-medium">Solutions</span>
+          </h1>
+
+          <p class="tw-text-xl tw-text-gray-600 tw-mb-8 tw-leading-relaxed">
+            We develop ERP solutions that combine timeless design with cutting-edge technology.
+          </p>
+
+          <div class="tw-flex tw-gap-4">
+            <a href="/services"
+               class="tw-px-6 tw-py-3 tw-bg-black tw-text-white tw-hover:bg-gray-800 tw-transition-colors tw-inline-flex tw-items-center tw-gap-2">
+              View My Work →
+            </a>
+
+            <a href="/contact"
+               class="tw-px-6 tw-py-3 tw-border tw-border-gray-300 tw-hover:border-black tw-transition-colors">
+              Contact Me
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="tw-flex tw-flex-shrink-0">
+          <div class="tw-relative tw-w-[400px] tw-h-[350px] tw-overflow-hidden  tw-shadow-lg tw-ml-28">
+            <img
+              src="/celer_website/static/src/img/hero.jpg"
+              alt="Modern technology workspace"
+              class="tw-w-full tw-h-full tw-object-cover tw-block"
+            />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </template>
+
+</odoo>

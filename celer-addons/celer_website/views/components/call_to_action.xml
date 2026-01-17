@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <template id="celer_cta" name="Celer Dev – Call to Action">
+    <section class="tw-max-w-7xl tw-mx-auto tw-px-6 tw-py-20">
+      <div class="tw-text-center">
+        <h2 class="tw-text-4xl tw-font-light tw-mb-6">
+          Ready to Start Your
+          <span class="tw-font-medium">Project?</span>
+        </h2>
+
+        <p class="tw-text-xl tw-text-gray-600 tw-mb-8 tw-max-w-2xl tw-mx-auto">
+          Let’s collaborate to build a robust and scalable Odoo solution tailored to your business needs.
+        </p>
+
+        <a
+          href="/contact"
+          class="tw-px-8 tw-py-4 tw-bg-black tw-text-white hover:tw-bg-gray-800 tw-transition-colors tw-inline-flex tw-items-center tw-gap-2"
+        >
+          Contact Me
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  </template>
+</odoo>
