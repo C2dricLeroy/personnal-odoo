@@ -2,7 +2,6 @@
     <template id="celer_layout" inherit_id="website.layout">
         <xpath expr="//body" position="replace">
             <body t-att-class="'celer-body'">
-                <t t-call="website.navbar"/>
                 <main id="wrap">
                     <t t-out="0"/>
                 </main>

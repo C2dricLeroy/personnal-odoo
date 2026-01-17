@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
   <template id="celer_navbar" name="Celer Dev Navbar">
-    <nav class="bg-white border-b border-gray-100">
-      <div class="max-w-7xl mx-auto px-6 py-4">
-        <div class="flex items-center justify-between">
-          <a href="/" class="flex items-center">
-            <div class="text-2xl font-light tracking-tight">
-              <span class="font-extralight text-gray-600">celer</span>
-              <span class="font-medium">-dev</span>
+    <nav class="tw-bg-white tw-border-b tw-border-gray-100">
+      <div class="tw-max-w-7xl tw-mx-auto tw-px-6 tw-py-4">
+        <div class="tw-flex tw-items-center tw-justify-between">
+          <a href="/" class="tw-flex tw-items-center">
+            <div class="tw-text-2xl tw-font-light tw-tracking-tight">
+              <span class="tw-font-extralight tw-text-gray-600">celer</span>
+              <span class="tw-font-medium">-dev</span>
             </div>
           </a>
-          <div class="flex gap-8">
+          <div class="tw-flex tw-gap-8">
             <t t-set="current_path" t-value="request.httprequest.path"/>
             <t t-foreach="[
               {'path': '/', 'label': 'Home'},
@@ -22,9 +22,9 @@
               <a
                 t-att-href="item['path']"
                 t-att-class="
-                  'transition-colors ' +
-                  ('text-black' if current_path == item['path']
-                  else 'text-gray-500 hover:text-black')
+                  'tw-transition-colors ' +
+                  ('tw-text-black' if current_path == item['path']
+                  else 'tw-text-gray-500 tw-hover:text-black')
                 "
               >
                 <t t-esc="item['label']"/>
