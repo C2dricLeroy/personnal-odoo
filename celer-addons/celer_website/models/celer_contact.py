@@ -11,3 +11,8 @@ class CelerContact(models.Model):
     company = fields.Char('Company')
     service = fields.Char('Service')
     phone = fields.Char('Phone')
+    state = fields.Selection([
+        ('new', 'New'),
+        ('read', 'Read'),
+        ('done', 'Done')
+    ], default='new', string="Status")
