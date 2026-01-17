@@ -11,8 +11,15 @@
         "views/components/header.xml",
         "views/components/footer.xml",
         "views/components/hero.xml",
+        "views/components/service_preview.xml",
+        "views/components/call_to_action.xml",
+        "views/components/development.xml",
         "views/layout.xml",
         "views/pages/homepage.xml",
+        "views/pages/about.xml",
+        "views/pages/services.xml",
+        "views/pages/contact.xml",
+        "views/pages/blog.xml",
     ],
     "assets": {
         "web.assets_frontend": [

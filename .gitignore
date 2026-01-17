@@ -1,8 +1,10 @@
 db
-odoo_source
+odoo
 data
 
 .env
 .env.prod
+
+.vscode
 
 node_modules

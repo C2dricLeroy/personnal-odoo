@@ -22,9 +22,11 @@ Custom Odoo module developed for Celer.
         "calendar",
         "auth_signup",
         "sale",
-        "project"
+        "project",
+        "celer_website",
+        "celer_base",
+        "celer_data",
     ],
-
     "data": [
     ],
     "post_init_hook": "post_init_hook",

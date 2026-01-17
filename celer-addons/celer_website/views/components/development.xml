@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="celer_development" name="Celer Development">
+        <section class="tw-max-w-7xl tw-mx-auto tw-px-6 tw-py-20">
+            <div class="tw-text-center">
+                <h1>Cédric Leroy – Odoo Developer</h1>
+                <p>This page is still in development, please check back later.</p>
+            </div>
+        </section>
+    </template>
+</odoo>
