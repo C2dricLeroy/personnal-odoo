@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <template id="celer_contact_form" name="Celer Contact Form">
+    <form t-att-action="'/contact/submit'" method="post" class="tw-space-y-10 tw-gap-4">
+      <div>
+        <label for="name" class="tw-block tw-text-sm tw-mb-2">Full Name</label>
+        <input type="text" id="name" name="name"
+               class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 focus:tw-outline-none focus:tw-border-gray-800"
+               placeholder="John Doe"/>
+      </div>
+      <div>
+        <label for="email" class="tw-block tw-text-sm tw-mb-2 tw-mt-10">Email Address</label>
+        <input type="email" id="email" name="email"
+               class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 focus:tw-outline-none focus:tw-border-gray-800"
+               placeholder="john@example.com"/>
+      </div>
+      <div>
+        <label for="phone" class="tw-block tw-text-sm tw-mb-2 tw-mt-10">Phone Number</label>
+        <input type="text" id="phone" name="phone"
+               class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 focus:tw-outline-none focus:tw-border-gray-800"
+               placeholder="1234567890"/>
+      </div>
+      <div>
+        <label for="company" class="tw-block tw-text-sm tw-mb-2 tw-mt-10">Company (Optional)</label>
+        <input type="text" id="company" name="company"
+               class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 focus:tw-outline-none focus:tw-border-gray-800"
+               placeholder="Your Company"/>
+      </div>
+      <div>
+        <label for="service" class="tw-block tw-text-sm tw-mb-2 tw-mt-10">Service Interest</label>
+        <select id="service" name="service"
+                class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 focus:tw-outline-none focus:tw-border-gray-800">
+          <option>Web Development</option>
+          <option>Mobile Development</option>
+          <option>UI/UX Design</option>
+          <option>Consulting</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="message" class="tw-block tw-text-sm tw-mb-2 tw-mt-10">Message</label>
+        <textarea id="message" name="message" rows="6"
+                  class="tw-w-full tw-px-4 tw-py-3 tw-border tw-border-gray-300 focus:tw-outline-none focus:tw-border-gray-800 tw-resize-none"
+                  placeholder="Tell us about your project..."></textarea>
+      </div>
+      <button type="submit"
+              class="tw-w-full tw-py-6 tw-pt-4 tw-bg-black tw-text-white hover:tw-bg-gray-800 tw-transition-colors">
+        Send Message
+        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+      </button>
+    </form>
+  </template>
+</odoo>

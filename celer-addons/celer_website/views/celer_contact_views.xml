@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="action_celer_contact" model="ir.actions.act_window">
+    <field name="name">Contact Messages</field>
+    <field name="res_model">celer.contact</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Click "Create" to add a new contact message.
+      </p>
+    </field>
+  </record>
+
+  <menuitem id="menu_celer_contact" 
+            name="Contact Messages" 
+            parent="website.menu_current_page" 
+            action="action_celer_contact"/>
+</odoo>
