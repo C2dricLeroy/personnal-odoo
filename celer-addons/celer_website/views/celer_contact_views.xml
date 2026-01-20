@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  <record id="view_celer_contact_kanban" model="ir.ui.view">
+    <field name="name">celer.contact.kanban</field>
+    <field name="model">celer.contact</field>
+    <field name="arch" type="xml">
+        <kanban class="o_kanban_small_column">
+            <field name="name"/>
+            <field name="email"/>
+            <field name="state"/>
+
+            <templates>
+                <t t-name="card">
+                    <div class="oe_kanban_card">
+                        <strong>
+                            <field name="name"/>
+                        </strong>
+                        <div>
+                            <field name="email"/>
+                        </div>
+                        <div>
+                            <field name="state"/>
+                        </div>
+                    </div>
+                </t>
+            </templates>
+        </kanban>
+    </field>
+  </record>
+
+
+  <record id="view_celer_contact_form" model="ir.ui.view">
+      <field name="name">celer.contact.form</field>
+      <field name="model">celer.contact</field>
+      <field name="arch" type="xml">
+          <form string="Contact Message">
+              <header>
+                  <field name="state" widget="status_bar"/>
+              </header>
+              <sheet>
+                  <group>
+                      <field name="name"/>
+                      <field name="email"/>
+                      <field name="company"/>
+                      <field name="service"/>
+                      <field name="message"/>
+                      <field name="create_date"/>
+                  </group>
+              </sheet>
+          </form>
+      </field>
+  </record>
+
+  <record id="view_celer_contact_list" model="ir.ui.view">
+      <field name="name">celer.contact.list</field>
+      <field name="model">celer.contact</field>
+      <field name="arch" type="xml">
+          <list string="Contact Message">
+                      <field name="name"/>
+                      <field name="email"/>
+                      <field name="company"/>
+                      <field name="service"/>
+                      <field name="message"/>
+                      <field name="state"/>
+                      <field name="create_date"/>
+          </list>
+      </field>
+  </record>
+
+    <record id="action_celer_contact" model="ir.actions.act_window">
+      <field name="name">Contact Messages</field>
+      <field name="res_model">celer.contact</field>
+      <field name="view_mode">kanban,form,list</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Click "Create" to add a new contact message.
+        </p>
+      </field>
+    </record>
+
+
+  <menuitem id="menu_celer_contact" 
+            name="Contact Messages" 
+            parent="website.menu_current_page" 
+            action="action_celer_contact"/>
+</odoo>

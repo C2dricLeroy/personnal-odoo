@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <template id="celer_contact_info" name="Celer Contact Info">
+    <div class="tw-bg-gray-50 tw-p-8 tw-border tw-border-gray-100 tw-mb-8">
+      <h2 class="tw-text-2xl tw-font-medium tw-mb-6">Contact Information</h2>
+      <div class="tw-flex tw-flex-col tw-gap-6">
+        <div class="tw-flex tw-items-start tw-gap-4">
+          <span class="tw-text-gray-600 tw-mt-1">📧</span>
+          <div>
+            <div class="tw-font-medium tw-mb-1">Email</div>
+            <a href="mailto:info@celer-dev.com" class="tw-text-gray-600 hover:tw-text-black">info@celer-dev.com</a>
+          </div>
+        </div>
+        <div class="tw-flex tw-items-start tw-gap-4">
+          <span class="tw-text-gray-600 tw-mt-1">📞</span>
+          <div>
+            <div class="tw-font-medium tw-mb-1">Phone</div>
+            <a href="tel:+15551234567" class="tw-text-gray-600 hover:tw-text-black">+1 (555) 123-4567</a>
+          </div>
+        </div>
+        <div class="tw-flex tw-items-start tw-gap-4">
+          <span class="tw-text-gray-600 tw-mt-1">📍</span>
+          <div>
+            <div class="tw-font-medium tw-mb-1">Location</div>
+            <div class="tw-text-gray-600">San Francisco, CA<br/>United States</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+</odoo>

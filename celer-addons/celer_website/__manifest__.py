@@ -8,18 +8,23 @@
         "website",
     ],
     "data": [
+        "security/ir.model.access.csv",
         "views/components/header.xml",
         "views/components/footer.xml",
         "views/components/hero.xml",
         "views/components/service_preview.xml",
         "views/components/call_to_action.xml",
         "views/components/development.xml",
+        "views/components/contact/contact_form.xml",
+        "views/components/contact/contact_info.xml",
+        "views/components/contact/contact_hours.xml",
         "views/layout.xml",
         "views/pages/homepage.xml",
         "views/pages/about.xml",
         "views/pages/services.xml",
         "views/pages/contact.xml",
         "views/pages/blog.xml",
+        "views/celer_contact_views.xml",
     ],
     "assets": {
         "web.assets_frontend": [

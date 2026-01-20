@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <template id="celer_contact_hours" name="Celer Office Hours">
+    <div class="tw-bg-gray-50 tw-p-8 tw-border tw-border-gray-100">
+      <h2 class="tw-text-2xl tw-font-medium tw-mb-4">Office Hours</h2>
+      <div class="tw-flex tw-flex-col tw-gap-2 tw-text-gray-600">
+        <div class="tw-flex tw-justify-between"><span>Monday - Friday</span><span>9:00 AM - 6:00 PM</span></div>
+        <div class="tw-flex tw-justify-between"><span>Saturday</span><span>10:00 AM - 4:00 PM</span></div>
+        <div class="tw-flex tw-justify-between"><span>Sunday</span><span>Closed</span></div>
+      </div>
+    </div>
+  </template>
+</odoo>
