@@ -17,7 +17,7 @@
               {'path': '/about', 'label': 'About'},
               {'path': '/services', 'label': 'Services &amp; Projects'},
               {'path': '/blog', 'label': 'Blog'},
-              {'path': '/contact', 'label': 'Contact'}
+              {'path': '/contact_celer', 'label': 'Contact'}
             ]" t-as="item">
               <a
                 t-att-href="item['path']"
