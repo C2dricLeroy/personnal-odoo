@@ -11,7 +11,7 @@
             <field name="state"/>
 
             <templates>
-                <t   t-name="card">
+                <t t-name="card">
                     <div class="oe_kanban_card">
                         <strong>
                             <field name="name"/>
