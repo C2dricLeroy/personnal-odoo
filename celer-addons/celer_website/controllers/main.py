@@ -16,7 +16,7 @@ class CelerWebsite(http.Controller):
     def services(self):
         return request.render("celer_website.services")
 
-    @http.route("/contact", type="http", auth="public", website=True)
+    @http.route("/contact_celer", type="http", auth="public", website=True)
     def contact(self):
         return request.render("celer_website.celer_contact")
 
