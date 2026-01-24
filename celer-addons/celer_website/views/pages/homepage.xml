@@ -3,9 +3,6 @@
     <template id="homepage" name="Celer Homepage">
         <t t-call="celer_website.celer_layout">
 
-          <t t-call="celer_website.celer_navbar"/>
-
-          <!-- HERO ONLY -->
           <t t-call="celer_website.celer_hero"/>
           <t t-call="celer_website.celer_service"/>
           <t t-call="celer_website.celer_cta"/>

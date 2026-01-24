@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+<template id="celer_blog_override" inherit_id="website_blog.blog_post_short">
+
+    <xpath expr="//div[@id='o_wblog_blog_top_droppable']" position="before">
+        <t t-call="celer_website.celer_navbar"/>
+    </xpath>
+
+    <xpath expr="//section[@id='o_wblog_index_content']" position="replace">
+
+        <!-- TON DESIGN -->
+        <div class="max-w-7xl mx-auto px-6 py-20">
+            <div class="max-w-4xl mx-auto">
+
+                <h1 class="text-5xl font-light mb-6">
+                    Our <span class="font-medium">Blog</span>
+                </h1>
+
+                <p class="text-xl text-gray-600 mb-16">
+                    Insights, tutorials, and thoughts on web development, design, and digital strategy.
+                </p>
+
+                <div class="space-y-12">
+                    <t t-foreach="posts" t-as="post">
+                        <article class="border-b border-gray-100 pb-12 last:border-0">
+
+                            <div class="flex items-center gap-4 mb-3 text-sm text-gray-500">
+                                <t t-if="post.tag_ids">
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-700">
+                                        <t t-esc="post.tag_ids[0].name"/>
+                                    </span>
+                                </t>
+
+                                <span t-esc="post.post_date.strftime('%d %B %Y')"/>
+                                <span>•</span>
+                                <span t-esc="post.reading_time or '5 min read'"/>
+                            </div>
+
+                            <h2 class="text-3xl font-medium mb-4 hover:text-gray-600 transition-colors">
+                                <a t-att-href="post.website_url">
+                                    <t t-esc="post.name"/>
+                                </a>
+                            </h2>
+
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                <t t-esc="post.subtitle"/>
+                            </p>
+
+                            <a t-att-href="post.website_url" class="text-sm hover:underline">
+                                Read More →
+                            </a>
+
+                        </article>
+                    </t>
+                </div>
+            </div>
+        </div>
+
+    </xpath>
+</template>
+
+</odoo>
+
+

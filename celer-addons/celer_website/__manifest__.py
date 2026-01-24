@@ -23,7 +23,6 @@
         "views/pages/about.xml",
         "views/pages/services.xml",
         "views/pages/contact.xml",
-        "views/pages/blog.xml",
         "views/celer_contact_views.xml",
     ],
     "assets": {
