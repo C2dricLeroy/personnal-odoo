@@ -1,26 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <template id="celer_blog_override" inherit_id="website_blog.blog_post_short">
+        <xpath expr="//div[@id='o_wblog_blog_top_droppable']" position="before">
+            <t t-call="celer_website.celer_navbar"/>
+        </xpath>
 
-<template id="celer_blog_override" inherit_id="website_blog.blog_post_short">
+        <xpath expr="//section[@id='o_wblog_index_content']" position="replace">
+            <div class="tw-max-w-7xl tw-mx-auto tw-px-6 tw-py-20">
+                <div class="tw-max-w-4xl tw-mx-auto">
+                    <t t-call="celer_blog.blog_header"/>
+                    <t t-call="celer_blog.blog_post_list"/>
+                    <t t-call="celer_blog.blog_newsletter"/>
+                </div>
+            </div>
 
-    <xpath expr="//div[@id='o_wblog_blog_top_droppable']" position="before">
-        <t t-call="celer_website.celer_navbar"/>
-    </xpath>
+            <t t-call="celer_website.celer_footer"/>
 
-    <xpath expr="//section[@id='o_wblog_index_content']" position="replace">
+        </xpath>
+    </template>
 
+    <template id="celer_blog_post_override" inherit_id="website_blog.blog_post_complete">
+        <xpath expr="//section[@id='o_wblog_post_top']" position="before">
+            <t t-call="celer_website.celer_navbar"/>
+        </xpath>
+
+        <xpath expr="//div[@id='o_wblog_post_content']" position="replace">
         <div class="tw-max-w-7xl tw-mx-auto tw-px-6 tw-py-20">
-            <div class="tw-max-w-4xl tw-mx-auto">
-
-                <t t-call="celer_blog.blog_header"/>
-                <t t-call="celer_blog.blog_post_list"/>
-                <t t-call="celer_blog.blog_newsletter"/>
-
+            <div class="tw-max-w-3xl tw-mx-auto">
+            <t t-call="celer_blog.blog_post_header"/>
+            <t t-call="celer_blog.blog_post_meta"/>
+            <t t-call="celer_blog.blog_post_cover"/>
+            <t t-call="celer_blog.blog_post_content"/>
+            <t t-call="celer_blog.blog_post_footer"/>
             </div>
         </div>
-    </xpath>
-</template>
+        </xpath>
 
+        <xpath expr="//section[@id='o_wblog_post_main']" position="after">
+            <t t-call="celer_website.celer_footer"/>
+        </xpath>
+
+    </template>
 </odoo>
 
 

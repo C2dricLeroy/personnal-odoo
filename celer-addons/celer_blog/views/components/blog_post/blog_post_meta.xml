@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <template id="blog_post_meta" name="Blog Post Meta">
+    <div class="tw-flex tw-items-center tw-gap-4 tw-mb-6 tw-text-sm tw-text-gray-500">
+      <t t-foreach="blog_post.tag_ids" t-as="tag">
+        <span class="tw-px-3 tw-py-1 tw-bg-gray-100 tw-text-gray-700">
+          <t t-esc="tag.name"/>
+        </span>
+      </t>
+      <span t-esc="blog_post.post_date.strftime('%d %B %Y')"/>
+      <span>•</span>
+      <span t-esc="blog_post.reading_time or '5 min read'"/>
+    </div>
+  </template>
+</odoo>
