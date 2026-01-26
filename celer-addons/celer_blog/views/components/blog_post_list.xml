@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="blog_post_list">
+
+        <div class="tw-space-y-12">
+            <t t-foreach="posts" t-as="post">
+                <t t-call="celer_blog.blog_post_card"/>
+            </t>
+        </div>
+
+    </template>
+
+</odoo>
