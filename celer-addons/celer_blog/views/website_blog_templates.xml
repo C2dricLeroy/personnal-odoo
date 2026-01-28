@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <template id="celer_blog_override" inherit_id="website_blog.blog_post_short">
-        <xpath expr="//div[@id='o_wblog_blog_top_droppable']" position="before">
-            <t t-call="celer_website.celer_navbar"/>
-        </xpath>
 
         <xpath expr="//section[@id='o_wblog_index_content']" position="replace">
             <div class="tw-max-w-7xl tw-mx-auto tw-px-6 tw-py-20">
                 <div class="tw-max-w-4xl tw-mx-auto">
+                    <t t-call="celer_blog.blog_header"/>
                     <t t-call="celer_blog.blog_post_list"/>
                     <t t-call="celer_blog.blog_newsletter"/>
                 </div>
