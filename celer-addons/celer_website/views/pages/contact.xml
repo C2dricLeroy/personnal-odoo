@@ -2,7 +2,6 @@
 <odoo>
   <template id="celer_contact" name="Celer Contact Page">
     <t t-call="celer_website.celer_layout">
-      <t t-call="celer_website.celer_navbar"/>
       
       <section class="tw-max-w-7xl tw-mx-auto tw-px-6 tw-py-20">
         <h1 class="tw-text-4xl tw-font-bold tw-mb-8">Contact Me</h1>

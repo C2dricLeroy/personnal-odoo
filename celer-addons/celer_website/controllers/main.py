@@ -20,9 +20,6 @@ class CelerWebsite(http.Controller):
     def contact(self):
         return request.render("celer_website.celer_contact")
 
-    @http.route("/blog", type="http", auth="public", website=True)
-    def blog(self):
-        return request.render("celer_website.blog")
 
     @http.route('/contact/submit', type='http', auth='public', methods=['POST'], website=True)
     def contact_submit(self, **post):

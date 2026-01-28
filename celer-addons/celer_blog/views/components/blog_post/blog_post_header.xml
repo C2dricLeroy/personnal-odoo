@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="blog_post_header">
+        <t t-call="website_blog.blog_post_header"/>
+        <h1 class="tw-text-5xl tw-font-light tw-mb-4">
+            <t t-esc="blog_post.name"/>
+        </h1>
+        <t t-if="blog_post.subtitle">
+            <p class="tw-text-xl tw-text-gray-600">
+                <t t-esc="blog_post.subtitle"/>
+            </p>
+        </t>
+    </template>
+</odoo>  

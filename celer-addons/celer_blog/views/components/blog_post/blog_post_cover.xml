@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="blog_post_cover" name="Blog Post Cover">
+        <t t-if="blog_post.cover_url">
+            <div class="tw-mb-8">
+                <img t-att-src="blog_post.cover_url" t-att-alt="blog_post.name"
+                     class="tw-w-full tw-h-[400px] tw-object-cover tw-rounded"/>
+            </div>
+        </t>
+    </template>
+</odoo>

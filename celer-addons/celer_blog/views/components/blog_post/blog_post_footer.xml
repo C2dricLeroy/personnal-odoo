@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="blog_post_footer" name="Blog Post Footer">
+        <div class="tw-mt-16 tw-border-t tw-border-gray-200 tw-pt-12 tw-flex tw-flex-col md:tw-flex-row tw-justify-between tw-gap-6">
+            <div class="tw-flex tw-items-center tw-gap-4">
+                <span class="tw-font-medium">Share:</span>
+                <a href="#" class="tw-text-blue-500 hover:tw-underline">Twitter</a>
+                <a href="#" class="tw-text-blue-700 hover:tw-underline">LinkedIn</a>
+            </div>
+            <div>
+                <span class="tw-font-medium">Subscribe to our newsletter</span>
+            </div>
+        </div>
+
+        <t t-call="celer_website.celer_footer"/>
+    </template>
+</odoo>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="blog_post_card">
+        <article class="tw-border-b tw-border-gray-100 tw-pb-12 last:tw-border-0">
+
+            <div class="tw-flex tw-items-center tw-gap-4 tw-mb-3 tw-text-sm tw-text-gray-500">
+
+            <t t-if="post.tag_ids">
+                <span class="tw-px-3 tw-py-1 tw-bg-gray-100 tw-text-gray-700">
+                <t t-esc="post.tag_ids[0].name"/>
+                </span>
+            </t>
+
+            <span t-esc="post.post_date.strftime('%d %B %Y')"/>
+            <span>•</span>
+            <span t-esc="post.reading_time or '5 min read'"/>
+            </div>
+
+            <h2 class="tw-text-3xl tw-font-medium tw-mb-4 hover:tw-text-gray-600 tw-transition-colors">
+            <a t-att-href="post.website_url">
+                <t t-esc="post.name"/>
+            </a>
+            </h2>
+
+            <p class="tw-text-gray-600 tw-leading-relaxed tw-mb-4">
+            <t t-esc="post.subtitle"/>
+            </p>
+
+            <a t-att-href="post.website_url" class="tw-text-sm hover:tw-underline">
+            Read More →
+            </a>
+
+        </article>
+        </template>
+
+</odoo>

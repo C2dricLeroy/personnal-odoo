@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="blog_header">
+        <h1 class="tw-text-5xl tw-font-light tw-mb-6">
+            Our <span class="tw-font-medium">Blog</span>
+        </h1>
+
+        <p class="tw-text-xl tw-text-gray-600 tw-mb-16">
+            Insights, tutorials, and thoughts on web development, design, and digital strategy.
+        </p>
+    </template>
+
+</odoo>

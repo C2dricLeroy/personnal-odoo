@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="blog_post_content" name="Blog Post Content">
+        <div class="tw-prose tw-prose-lg tw-max-w-none tw-mb-12">
+            <t t-field="blog_post.body" options="{'widget': 'html'}"/>
+        </div>
+    </template>
+</odoo>
