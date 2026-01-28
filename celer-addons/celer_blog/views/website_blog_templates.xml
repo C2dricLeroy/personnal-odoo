@@ -8,7 +8,6 @@
         <xpath expr="//section[@id='o_wblog_index_content']" position="replace">
             <div class="tw-max-w-7xl tw-mx-auto tw-px-6 tw-py-20">
                 <div class="tw-max-w-4xl tw-mx-auto">
-                    <t t-call="celer_blog.blog_header"/>
                     <t t-call="celer_blog.blog_post_list"/>
                     <t t-call="celer_blog.blog_newsletter"/>
                 </div>
