@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+        <record id="project.open_view_project_all" model="ir.actions.act_window">
+            <field name="view_mode">list,kanban,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <record id="project.open_view_project_all_group_stage" model="ir.actions.act_window">
+            <field name="view_mode">list,kanban,form,calendar,activity</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <record id="view_project_inherit" model="ir.ui.view">
+            <field name="name">view.project.inherit</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="replace">
+                    <field name="website_published"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="edit_project_inherit" model="ir.ui.view">
+            <field name="name">edit.project.inherit</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button
+                        name="action_open_live_url"
+                        type="object"
+                        string="Live Website"
+                        class="btn-primary"
+                        icon="fa-external-link"
+                        invisible="not live_url"
+                    />
+                </xpath>
+                <xpath expr="//field[@name='date_start']" position="after">
+                    <field name="technology_ids" string="Technologies" widget="many2many_tags"/>
+                    <field name="client_comment" string="Client Comment"/>
+                    <field name="website_published" string="Website plublished"/>
+                </xpath>
+                <xpath expr="//page[@name='description']" position="replace">
+                    <page name="description" string="Description">
+                        <group>
+                            <field name="short_description" string="Short Description"/>
+                            <field name="website_description" string="Website Description" options="{'resizable': false}" placeholder="Website description..."/>
+                            <field name="cover_image" string="Cover Image" widget="binary"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
