@@ -4,19 +4,27 @@
     <t t-call="celer_website.celer_layout">
 
       <section class="tw-max-w-7xl tw-mx-auto tw-px-6 tw-py-20">
-        <h1 class="tw-text-4xl tw-font-bold tw-mb-8">Contact Me</h1>
-        <p class="tw-text-lg tw-text-gray-600 tw-mb-12">I'd love to hear from you. Whether you have a project in mind, a question, or just want to say hello, feel free to reach out.</p>
 
-        <div class="tw-flex tw-flex-row sm:tw-flex-col tw-gap-4">
-          <div class="tw-w-full lg:tw-w-1/2 lg:tw-mr-4">
+        <div class="tw-mb-12">
+          <h1 class="tw-text-4xl tw-font-bold tw-mb-4 tw-text-center lg:tw-text-left">Contact Me</h1>
+          <p class="tw-text-lg tw-text-gray-600 tw-text-center lg:tw-text-left">
+            I'd love to hear from you. Whether you have a project in mind, a question, or just want to say hello, feel free to reach out.
+          </p>
+        </div>
+
+        <div class="tw-flex tw-flex-col lg:tw-flex-row tw-gap-8">
+
+          <div class="tw-w-full lg:tw-w-1/2">
             <t t-call="celer_website.celer_contact_form"/>
           </div>
-          <div class="tw-w-full lg:tw-w-1/2 tw-flex tw-flex-col tw-gap-6 lg:tw-ml-4">
+
+          <div class="tw-w-full lg:tw-w-1/2 tw-flex tw-flex-col tw-gap-6">
             <t t-call="celer_website.celer_contact_info"/>
             <t t-call="celer_website.celer_contact_hours"/>
           </div>
 
         </div>
+
       </section>
 
     </t>
