@@ -11,8 +11,6 @@
                 </div>
             </div>
 
-            <t t-call="celer_website.celer_footer"/>
-
         </xpath>
     </template>
 
