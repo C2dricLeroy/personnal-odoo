@@ -4,8 +4,9 @@
     <footer class="tw-bg-gray-50 tw-border-t tw-border-gray-100 tw-mt-20">
       <div class="tw-max-w-7xl tw-mx-auto tw-px-6 tw-py-6">
 
-        <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-4 tw-gap-8">
-          <div>
+        <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-4 tw-gap-8">
+
+          <div class="tw-text-center sm:tw-text-left">
             <div class="tw-text-xl tw-font-light tw-tracking-tight tw-mb-4">
               <span class="tw-font-extralight">celer</span>
               <span class="tw-font-medium">-dev</span>
@@ -14,7 +15,8 @@
               Crafting elegant digital solutions with precision and sophistication.
             </p>
           </div>
-          <div>
+
+          <div class="tw-text-center sm:tw-text-left">
             <h3 class="tw-font-medium tw-mb-4">Navigation</h3>
             <ul class="tw-space-y-2 tw-text-sm tw-text-gray-600">
               <li><a href="/" class="tw-hover:text-black tw-transition-colors">Home</a></li>
@@ -23,7 +25,8 @@
               <li><a href="/blog" class="tw-hover:text-black tw-transition-colors">Blog</a></li>
             </ul>
           </div>
-          <div>
+
+          <div class="tw-text-center sm:tw-text-left">
             <h3 class="tw-font-medium tw-mb-4">Services</h3>
             <ul class="tw-space-y-2 tw-text-sm tw-text-gray-600">
               <li>Web Development</li>
@@ -32,7 +35,8 @@
               <li>Consulting</li>
             </ul>
           </div>
-          <div>
+
+          <div class="tw-text-center sm:tw-text-left">
             <h3 class="tw-font-medium tw-mb-4">Contact</h3>
             <ul class="tw-space-y-2 tw-text-sm tw-text-gray-600">
               <li>info@celer-dev.com</li>

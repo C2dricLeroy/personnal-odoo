@@ -4,18 +4,20 @@
     <nav class="tw-bg-white tw-border-b tw-border-gray-100">
       <div class="tw-max-w-7xl tw-mx-auto tw-px-6 tw-py-4">
         <div class="tw-flex tw-items-center tw-justify-between">
+
           <a href="/" class="tw-flex tw-items-center">
             <div class="tw-text-2xl tw-font-light tw-tracking-tight">
               <span class="tw-font-extralight tw-text-gray-600">celer</span>
               <span class="tw-font-medium">-dev</span>
             </div>
           </a>
-          <div class="tw-flex tw-gap-8">
+
+          <div class="tw-hidden md:tw-flex tw-gap-8">
             <t t-set="current_path" t-value="request.httprequest.path"/>
             <t t-foreach="[
               {'path': '/', 'label': 'Home'},
               {'path': '/about', 'label': 'About'},
-              {'path': '/services', 'label': 'Services &amp; Projects'},
+              {'path': '/celer-projects', 'label': 'Services &amp; Projects'},
               {'path': '/blog', 'label': 'Blog'},
               {'path': '/contact_celer', 'label': 'Contact'}
             ]" t-as="item">
@@ -29,12 +31,52 @@
               >
                 <t t-esc="item['label']"/>
               </a>
-
             </t>
+          </div>
+
+          <div class="md:tw-hidden">
+            <button id="mobile-menu-button" class="tw-text-gray-500 hover:tw-text-black focus:tw-outline-none">
+              <svg class="tw-w-6 tw-h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
           </div>
 
         </div>
       </div>
+
+      <div id="mobile-menu" class="tw-hidden md:tw-hidden tw-px-6 tw-py-4 tw-space-y-2">
+        <t t-set="current_path" t-value="request.httprequest.path"/>
+        <t t-foreach="[
+          {'path': '/', 'label': 'Home'},
+          {'path': '/about', 'label': 'About'},
+          {'path': '/celer-projects', 'label': 'Services &amp; Projects'},
+          {'path': '/blog', 'label': 'Blog'},
+          {'path': '/contact_celer', 'label': 'Contact'}
+        ]" t-as="item">
+          <a
+            t-att-href="item['path']"
+            t-att-class="
+              'tw-block tw-transition-colors ' +
+              ('tw-text-black' if current_path == item['path']
+              else 'tw-text-gray-500 tw-hover:text-black')
+            "
+          >
+            <t t-esc="item['label']"/>
+          </a>
+        </t>
+      </div>
+
+      <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+          const button = document.getElementById('mobile-menu-button');
+          const menu = document.getElementById('mobile-menu');
+          button.addEventListener('click', function() {
+            menu.classList.toggle('tw-hidden');
+          });
+        });
+      </script>
+
     </nav>
   </template>
 </odoo>

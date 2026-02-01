@@ -76,7 +76,6 @@
                 </div>
             </section>
 
-            <t t-call="celer_website.celer_footer"/>
         </t>
     </template>
 </odoo>

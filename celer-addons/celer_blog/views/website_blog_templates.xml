@@ -28,16 +28,10 @@
             <t t-call="celer_blog.blog_post_meta"/>
             <t t-call="celer_blog.blog_post_cover"/>
             <t t-call="celer_blog.blog_post_content"/>
-            <t t-call="celer_blog.blog_post_footer"/>
             </div>
         </div>
         </xpath>
 
-        <xpath expr="//section[@id='o_wblog_post_main']" position="after">
-            <t t-call="celer_website.celer_footer"/>
-        </xpath>
 
     </template>
 </odoo>
-
-

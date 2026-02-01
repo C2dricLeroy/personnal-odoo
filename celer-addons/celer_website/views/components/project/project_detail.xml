@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    <template id="celer_project_detail" name="Project Detail Content">
+    <section class="tw-pt-24 tw-pb-12 tw-px-6 tw-max-w-7xl tw-mx-auto">
+        <div class="tw-flex tw-flex-col md:tw-flex-row tw-justify-between tw-items-end tw-gap-8">
+            <div class="tw-max-w-2xl">
+                <nav class="tw-mb-4 tw-text-sm tw-text-gray-400">
+                    <a href="/projects" class="hover:tw-text-gray-600">Projects</a> / <t t-esc="project.name"/>
+                </nav>
+                <h1 class="tw-text-5xl md:tw-text-7xl tw-font-light tw-tracking-tight">
+                    <t t-esc="project.name"/>
+                </h1>
+            </div>
+            <div class="tw-pb-2">
+                <span class="tw-px-4 tw-py-2 tw-bg-gray-100 tw-rounded-full tw-text-sm tw-font-medium">
+                    <t t-esc="project.tag_ids[0].name if project.tag_ids else 'Case Study'"/>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="tw-px-6 tw-max-w-7xl tw-mx-auto tw-mb-20">
+        <div class="tw-aspect-[16/9] tw-bg-gray-200 tw-overflow-hidden">
+            <t t-if="project.image_1920">
+                <img t-attf-src="/web/image/project.project/#{project.id}/image_1920"
+                     class="tw-w-full tw-h-full tw-object-cover"
+                     t-att-alt="project.name"/>
+            </t>
+            <t t-else="">
+                <div class="tw-w-full tw-h-full tw-flex tw-items-center tw-justify-center tw-text-gray-400">
+                    Image not available
+                </div>
+            </t>
+        </div>
+    </section>
+
+    <section class="tw-px-6 tw-max-w-7xl tw-mx-auto tw-mb-24">
+        <div class="tw-grid tw-grid-cols-1 lg:tw-grid-cols-12 tw-gap-12">
+            <div class="lg:tw-col-span-4">
+                <div class="tw-sticky tw-top-24 tw-space-y-8">
+                    <div>
+                        <h4 class="tw-text-sm tw-font-bold tw-uppercase tw-tracking-widest tw-mb-2">Client</h4>
+                        <p class="tw-text-gray-600"><t t-esc="project.partner_id.name if project.partner_id else 'Confidential'"/></p>
+                    </div>
+                    <div>
+                        <h4 class="tw-text-sm tw-font-bold tw-uppercase tw-tracking-widest tw-mb-2">Date</h4>
+                        <p class="tw-text-gray-600"><t t-esc="project.date_start or '2024'"/></p>
+                    </div>
+                    <div>
+                        <h4 class="tw-text-sm tw-font-bold tw-uppercase tw-tracking-widest tw-mb-2">Role</h4>
+                        <p class="tw-text-gray-600">Design &amp; Development</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:tw-col-span-8">
+                <div class="tw-prose tw-prose-xl tw-text-gray-700 tw-max-w-none">
+                    <div t-field="project.description" placeholder="Project description..."/>
+                </div>
+
+                <div class="tw-mt-16">
+                    <a href="/projects" class="tw-inline-flex tw-items-center tw-gap-2 tw-text-black tw-font-medium hover:tw-gap-4 tw-transition-all">
+                        ← Back to all projects
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+</data>
+</odoo>

@@ -12,16 +12,13 @@ class CelerWebsite(http.Controller):
     def about(self):
         return request.render("celer_website.about")
 
-    @http.route("/services", type="http", auth="public", website=True)
-    def services(self):
-        return request.render("celer_website.services")
-
     @http.route("/contact_celer", type="http", auth="public", website=True)
     def contact(self):
         return request.render("celer_website.celer_contact")
 
-
-    @http.route('/contact/submit', type='http', auth='public', methods=['POST'], website=True)
+    @http.route(
+        "/contact/submit", type="http", auth="public", methods=["POST"], website=True
+    )
     def contact_submit(self, **post):
         """
         post = {
@@ -30,10 +27,11 @@ class CelerWebsite(http.Controller):
             'message': '...'
         }
         """
-        request.env['celer.contact'].sudo().create({
-            'name': post.get('name'),
-            'email': post.get('email'),
-            'message': post.get('message'),
-        })
-        return request.redirect('/contact?submitted=1')
-
+        request.env["celer.contact"].sudo().create(
+            {
+                "name": post.get("name"),
+                "email": post.get("email"),
+                "message": post.get("message"),
+            }
+        )
+        return request.redirect("/contact?submitted=1")

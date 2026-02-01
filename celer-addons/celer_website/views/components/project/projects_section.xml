@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="celer_projects" name="Services Page">
+            <section class="tw-bg-gray-50 tw-py-20">
+                <div class="tw-max-w-7xl tw-mx-auto tw-px-6">
+                    <h2 class="tw-text-4xl tw-font-light tw-mb-6">
+                        Featured <span class="tw-font-medium">Projects</span>
+                    </h2>
+                    <p class="tw-text-xl tw-text-gray-600 tw-mb-12 tw-max-w-3xl">
+                        A selection of our recent work showcasing our expertise across different industries.
+                    </p>
+
+                    <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-3 tw-gap-8">
+                        <t t-foreach="projects" t-as="project">
+                            <div class="tw-bg-white tw-border tw-border-gray-100 tw-overflow-hidden">
+                                <t t-if="project.cover_image">
+                                    <img t-att-src="project.cover_image" t-att-alt="project.name" class="tw-w-full tw-h-48 tw-object-cover"/>
+                                </t>
+                                <div class="tw-p-6">
+                                    <div class="tw-text-sm tw-text-gray-500 tw-mb-2">
+                                        <t t-esc="project.partner_id.name or ''"/>
+                                    </div>
+                                    <h3 class="tw-text-xl tw-font-medium tw-mb-3">
+                                        <t t-esc="project.name"/>
+                                    </h3>
+                                    <p class="tw-text-gray-600 tw-text-sm">
+                                        <t t-esc="project.short_description or ''"/>
+                                    </p>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+            </section>
+        </template>
+    </data>
+</odoo>
