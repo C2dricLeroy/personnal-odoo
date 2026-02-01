@@ -1,29 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- <record id="view_project_technology_search" model="ir.ui.view">
-        <field name="name">project.technology.search</field>
-        <field name="model">project.technology</field>
-        <field name="arch" type="xml">
-            <search>
-                <field name="name"/>
-                <field name="category_type"/>
-                <group expand="0" string="Group By">
-                    <filter string="Category" name="group_category" context="{'group_by': 'category_type'}"/>
-                </group>
-            </search>
-        </field>
-    </record> -->
-
     <record id="view_project_technology_list" model="ir.ui.view">
         <field name="name">project.technology.list</field>
         <field name="model">project.technology</field>
         <field name="arch" type="xml">
-            <list string="Technologies" editable="bottom">
+            <list string="Technologies">
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="category_type"/>
                 <field name="website_url" widget="url"/>
+                <field name="color"/>
             </list>
         </field>
     </record>
@@ -48,6 +35,8 @@
                         </group>
                         <group>
                             <field name="sequence"/>
+                            <field name="image" widget="image"/>
+                            <field name="color" widget="color_picker"/>
                         </group>
                     </group>
                     <separator string="Description"/>
@@ -70,7 +59,7 @@
 
     <menuitem id="menu_project_technology"
               name="Project technologies"
-              parent="website.menu_project_config"
+              parent="project.menu_project_config"
               action="action_project_technology"
               sequence="50"/>
 

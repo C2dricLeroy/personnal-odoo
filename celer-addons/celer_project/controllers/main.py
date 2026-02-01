@@ -4,22 +4,11 @@ from odoo.http import request
 
 class ProjectController(http.Controller):
 
-    @http.route("/projects", type="http", auth="public", website=True)
+    @http.route("/celer-projects", type="http", auth="public", website=True)
     def list_projects(self):
-        projects = request.env["project.project"].search(
-            [("website_published", "=", True)]
+        projects = (
+            request.env["project.project"]
+            .sudo()
+            .search([("is_website_visible", "=", True)])
         )
-        return request.render(
-            "celer_project.project_list_template", {"projects": projects}
-        )
-
-    @http.route(
-        '/projects/<model("project.project"):project>',
-        type="http",
-        auth="public",
-        website=True,
-    )
-    def detail_projects(self, project):
-        return request.render(
-            "celer_project.project_detail_template", {"project": project}
-        )
+        return request.render("celer_website.services", {"projects": projects})

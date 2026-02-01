@@ -2,8 +2,8 @@
 <odoo>
     <template id="services" name="Services">
         <t t-call="celer_website.celer_layout">
-            <t t-call="celer_website.celer_development"/>
-            <t t-call="celer_website.celer_footer"/>
+            <t t-call="celer_website.celer_services"/>
+            <t t-call="celer_website.celer_projects"/>
         </t>
     </template>
 </odoo>

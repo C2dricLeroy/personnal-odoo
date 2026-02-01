@@ -13,13 +13,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTKKC4XT"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-                
+
                 <!-- Navbar globale -->
                 <t t-call="celer_website.celer_navbar"/>
 
                 <main id="wrap">
                     <t t-out="0"/>
                 </main>
+
+                <t t-call="celer_website.celer_footer"/>
             </body>
         </xpath>
     </template>

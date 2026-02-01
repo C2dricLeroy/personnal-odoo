@@ -18,6 +18,8 @@
         "views/components/contact/contact_form.xml",
         "views/components/contact/contact_info.xml",
         "views/components/contact/contact_hours.xml",
+        "views/components/project/projects_section.xml",
+        "views/components/project/service_section.xml",
         "views/layout.xml",
         "views/pages/homepage.xml",
         "views/pages/about.xml",

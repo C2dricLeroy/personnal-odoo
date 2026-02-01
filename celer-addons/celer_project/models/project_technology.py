@@ -23,7 +23,7 @@ class ProjectTechnology(models.Model):
             ("tool", "Tools"),
             ("other", "Other"),
         ],
-        string="Catégory",
+        string="Category",
         default="other",
     )
 

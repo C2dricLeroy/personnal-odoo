@@ -15,7 +15,7 @@
             <t t-foreach="[
               {'path': '/', 'label': 'Home'},
               {'path': '/about', 'label': 'About'},
-              {'path': '/services', 'label': 'Services &amp; Projects'},
+              {'path': '/celer-projects', 'label': 'Services &amp; Projects'},
               {'path': '/blog', 'label': 'Blog'},
               {'path': '/contact_celer', 'label': 'Contact'}
             ]" t-as="item">
